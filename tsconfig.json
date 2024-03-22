@@ -5,6 +5,7 @@
     "target": "ES2021",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "resolveJsonModule": true,
   },
 }
