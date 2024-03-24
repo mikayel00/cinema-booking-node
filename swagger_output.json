@@ -21,19 +21,20 @@
           }
         },
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
                   "hallId": {
-                    "example": "any"
+                    "example": "number"
                   },
                   "movieId": {
-                    "example": "any"
+                    "example": "number"
                   },
                   "startTime": {
-                    "example": "any"
+                    "example": "number"
                   }
                 }
               }
@@ -51,7 +52,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -67,7 +68,8 @@
                 "type": "object",
                 "properties": {
                   "sessionId": {
-                    "example": "any"
+                    "required": true,
+                    "example": "number"
                   }
                 }
               }
@@ -85,7 +87,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -115,19 +117,20 @@
           }
         },
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
                   "name": {
-                    "example": "any"
+                    "example": "string"
                   },
                   "rowsCount": {
-                    "example": "any"
+                    "example": "number"
                   },
                   "seatsPerRow": {
-                    "example": "any"
+                    "example": "number"
                   }
                 }
               }
@@ -145,7 +148,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -161,13 +164,13 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "example": "any"
+                    "example": "string"
                   },
                   "rowsCount": {
-                    "example": "any"
+                    "example": "number"
                   },
                   "seatsPerRow": {
-                    "example": "any"
+                    "example": "number"
                   }
                 }
               }
@@ -185,7 +188,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -215,16 +218,17 @@
           }
         },
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
                   "name": {
-                    "example": "any"
+                    "example": "string"
                   },
                   "posterUrl": {
-                    "example": "any"
+                    "example": "string"
                   }
                 }
               }
@@ -242,7 +246,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -258,10 +262,10 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "example": "any"
+                    "example": "string"
                   },
                   "posterUrl": {
-                    "example": "any"
+                    "example": "string"
                   }
                 }
               }
@@ -279,7 +283,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
