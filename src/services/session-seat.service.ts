@@ -3,7 +3,7 @@ import { SessionSeatEntity } from "../models/session-seat.entity";
 
 const sessionSeatRepository = dataSource.getRepository(SessionSeatEntity);
 
-export async function bookSeat(req, res): Promise<void> {
+export async function bookSeat(req, res, next) {
     const sessionSeat = await sessionSeatRepository
         .createQueryBuilder('sessionSeat')
         .where('sessionSeat.session_id = :sessionId', {sessionId: req.body.sessionId})
@@ -11,7 +11,7 @@ export async function bookSeat(req, res): Promise<void> {
         .getOneOrFail();
 
     if (!sessionSeat.is_available) {
-        throw new Error('Seat is not available')
+        return next('Seat is not available');
     }
 
     sessionSeatRepository.merge(sessionSeat, {

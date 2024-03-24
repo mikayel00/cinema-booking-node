@@ -3,11 +3,13 @@ import { MovieEntity } from "../models/movie.entity";
 
 const moviesRepository = dataSource.getRepository(MovieEntity);
 
-export function createMovie(req, res) {
-    const movieEntity =  moviesRepository.create({
+export async function createMovie(req, res) {
+    const movieEntity = moviesRepository.create({
         name: req.body.name,
         poster_url: req.body.posterUrl,
     })
+
+    await moviesRepository.save(movieEntity);
 
     res.status(200).json(
         movieEntity,

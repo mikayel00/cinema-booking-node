@@ -16,12 +16,14 @@ export async function getHallById(id: number): Promise<HallEntity> {
     return hallEntity;
 }
 
-export function createHall(req, res) {
-    const hallEntity =  hallRepository.create({
+export async function createHall(req, res) {
+    const hallEntity = hallRepository.create({
         name: req.body.name,
         rows_count: req.body.rowsCount,
         seats_per_row: req.body.seatsPerRow,
     })
+
+    await hallRepository.save(hallEntity);
 
     res.status(200).json(
         hallEntity,

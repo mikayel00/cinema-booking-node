@@ -10,8 +10,11 @@ export async function getAvailableMoviesForHall(req, res) {
         .createQueryBuilder('movieSession')
         .leftJoinAndSelect('movieSession.movie', 'movie')
         .leftJoinAndSelect('movieSession.seats', 'seats')
-        .where('movieSession.hall_id = :hallId', { hallId: req.body.hallId })
+        .where('movieSession.hall_id = :hallId', { hallId: req.params.hallId })
         .andWhere('movieSession.start_time > :dateNow', { dateNow })
+        .orderBy('movieSession.start_time', 'ASC')
+        .addOrderBy('seats.row', 'ASC')
+        .addOrderBy('seats.seat', 'ASC')
         .getMany();
 
     res.status(200).json(
