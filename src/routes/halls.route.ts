@@ -1,6 +1,6 @@
 import express from 'express';
 import { getAvailableMoviesForHall } from '../services/movie-session.service';
-import {createHall, deleteHall, getHalls, updateHall} from "../services/hall.service";
+import { createHall, deleteHall, getHalls, updateHall } from "../services/hall.service";
 
 export const hallRoute = express.Router();
 

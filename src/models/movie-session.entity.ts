@@ -13,7 +13,7 @@ export class MovieSessionEntity extends AbstractEntity {
     movie_id: number;
 
     @Column({ type: "timestamp" })
-    start_time: number;
+    start_time: Date;
 
     @ManyToOne(
         () => HallEntity,
